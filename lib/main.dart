@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(
-    const MaterialApp( // Show user interface on the screen
+    MaterialApp( // Show user interface on the screen
       home: Scaffold(
-        backgroundColor: Color.fromRGBO(29, 95, 119, 0),
+        backgroundColor: const Color.fromRGBO(29, 95, 119, 0),
         body: GradientContainer(),
       ),
     ),
@@ -12,8 +12,6 @@ void main() {
 }
 
 class GradientContainer extends StatelessWidget{
-  const GradientContainer({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Container(
