@@ -4,14 +4,10 @@ import 'package:first_app/styled_text.dart';
 var startAlignment = Alignment.topCenter;
 var endAlignment = Alignment.bottomCenter;
 
-var colors = [
-  const Color.fromRGBO(152, 35, 35, 1),
-  const Color.fromRGBO(29, 95, 119, 1),
-  const Color.fromRGBO(7, 22, 89, 1)
-];
-
 class GradientContainer extends StatelessWidget {
-  const GradientContainer({super.key});
+  const GradientContainer({super.key, required this.colors});
+
+  final List<Color> colors;
 
   @override
   Widget build(BuildContext context) {
