@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+// Gradient Container widget
 class GradientContainer extends StatelessWidget {
   const GradientContainer({super.key});
 
