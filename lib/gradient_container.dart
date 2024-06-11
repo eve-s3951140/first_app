@@ -5,7 +5,8 @@ var startAlignment = Alignment.topCenter;
 var endAlignment = Alignment.bottomCenter;
 
 class GradientContainer extends StatelessWidget {
-  const GradientContainer({super.key, required this.colors}); // Add a required colors parameter
+  const GradientContainer(
+      {super.key, required this.colors}); // Add a required colors parameter
 
   final List<Color> colors;
 
@@ -13,7 +14,8 @@ class GradientContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        gradient: LinearGradient( // Add a gradient to the container
+        gradient: LinearGradient(
+          // Add a gradient to the container
           colors: colors,
           begin: startAlignment,
           end: endAlignment,
