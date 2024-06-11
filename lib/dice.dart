@@ -1,6 +1,9 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 
+// Store a random object instead of calling it and storing it every time Random.nextInt(6) + 1 
+final randomiser = Random();
+
 class Dice extends StatefulWidget {
   const Dice({super.key});
 
@@ -10,10 +13,10 @@ class Dice extends StatefulWidget {
 
 class _DiceState extends State<Dice> {
   var activeDiceImage = "assets/images/dice-2.png";
-
+ 
   void rollDice() {
     // Generate a random number between 1 and 6 (need to +1 because Random().nextInt() generates a number between 0 and 5)
-    var randomDiceNumber = Random().nextInt(6) + 1;
+    var randomDiceNumber = randomiser.nextInt(6) + 1;
 
     if (activeDiceImage == "assets/images/dice-$randomDiceNumber.png") {
       // If the same image is rolled, roll the dice again
