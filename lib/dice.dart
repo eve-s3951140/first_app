@@ -10,20 +10,12 @@ class Dice extends StatefulWidget {
 
 class _DiceState extends State<Dice> {
   var activeDiceImage = "assets/images/dice-2.png";
-  final diceImages = [
-    "assets/images/dice-1.png",
-    "assets/images/dice-2.png",
-    "assets/images/dice-3.png",
-    "assets/images/dice-4.png",
-    "assets/images/dice-5.png",
-    "assets/images/dice-6.png",
-  ];
 
   void rollDice() {
-    // Generate a random number between 0 and 5
-    var randomDiceNumber = Random().nextInt(6);
+    // Generate a random number between 1 and 6 (need to +1 because Random().nextInt() generates a number between 0 and 5)
+    var randomDiceNumber = Random().nextInt(6) + 1;
 
-    if (activeDiceImage == diceImages[randomDiceNumber]) {
+    if (activeDiceImage == "assets/images/dice-$randomDiceNumber.png") {
       // If the same image is rolled, roll the dice again
       rollDice();
       return;
@@ -31,7 +23,7 @@ class _DiceState extends State<Dice> {
 
     // Render the new dice image
     setState(() {
-      activeDiceImage = diceImages[randomDiceNumber];
+      activeDiceImage = "assets/images/dice-$randomDiceNumber.png";
     });
   }
 
