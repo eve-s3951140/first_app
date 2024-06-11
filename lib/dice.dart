@@ -38,18 +38,28 @@ class _DiceState extends State<Dice> {
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisSize: MainAxisSize.min,
+      mainAxisSize: MainAxisSize.min, // Center the children vertically
       children: [
         Image.asset(
-          activeDiceImage,
+          activeDiceImage, // Set the image to the activeDiceImage
           width: 200,
         ),
-        TextButton(
-          onPressed: rollDice,
-          style: TextButton.styleFrom(
-              padding: const EdgeInsets.only(top: 10),
-              foregroundColor: Colors.white,
-              textStyle: const TextStyle(fontSize: 20)),
+        SizedBox(
+          height: 20, 
+          child: Text("You have rolled ${activeDiceImage.substring(activeDiceImage.indexOf("-") + 1, activeDiceImage.indexOf("."))}", 
+            style: const TextStyle(fontSize: 18, color: Colors.white),
+          ),
+        ),
+        const SizedBox(height: 30), // Add margin between text and button
+        OutlinedButton(
+          onPressed: rollDice, // Call the rollDice function when the button is pressed
+          style: OutlinedButton.styleFrom(
+            padding: const EdgeInsets.all(20), // Add padding to the button on all sides
+            foregroundColor: Colors.white,
+            textStyle: const TextStyle(fontSize: 20),
+            backgroundColor: const Color.fromARGB(191, 0, 149, 255),
+            side: const BorderSide(color: Colors.white, width: 2), // Add a border to the button
+          ),
           child: const Text("Roll Dice"),
         ),
       ],
